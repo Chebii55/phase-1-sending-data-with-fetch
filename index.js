@@ -13,9 +13,13 @@ return fetch("http://localhost:3000/users", {
   .then(function (response) {
     return response.json();
   })
+  .then(data=>{
+    const id=data.id;
+    document.body.innerHTML=id;
+
+  })
   .catch(function (error) {
-    alert("Bad things! ERROR!");
-    console.log(error.message);
+    document.body.innerHTML=error.message;
   })
   
 }
